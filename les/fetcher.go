@@ -22,16 +22,16 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/consensus"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/les/fetcher"
-	"github.com/ethereum/go-ethereum/light"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p/enode"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/consensus"
+	"github.com/aymantaybi/ronin/core"
+	"github.com/aymantaybi/ronin/core/rawdb"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/ethdb"
+	"github.com/aymantaybi/ronin/les/fetcher"
+	"github.com/aymantaybi/ronin/light"
+	"github.com/aymantaybi/ronin/log"
+	"github.com/aymantaybi/ronin/p2p/enode"
 )
 
 const (
@@ -242,18 +242,19 @@ func (f *lightFetcher) forEachPeer(check func(id enode.ID, p *fetcherPeer) bool)
 }
 
 // mainloop is the main event loop of the light fetcher, which is responsible for
-// - announcement maintenance(ulc)
-//   If we are running in ultra light client mode, then all announcements from
-//   the trusted servers are maintained. If the same announcements from trusted
-//   servers reach the threshold, then the relevant header is requested for retrieval.
 //
-// - block header retrieval
-//   Whenever we receive announce with higher td compared with local chain, the
-//   request will be made for header retrieval.
+//   - announcement maintenance(ulc)
+//     If we are running in ultra light client mode, then all announcements from
+//     the trusted servers are maintained. If the same announcements from trusted
+//     servers reach the threshold, then the relevant header is requested for retrieval.
 //
-// - re-sync trigger
-//   If the local chain lags too much, then the fetcher will enter "synnchronise"
-//   mode to retrieve missing headers in batch.
+//   - block header retrieval
+//     Whenever we receive announce with higher td compared with local chain, the
+//     request will be made for header retrieval.
+//
+//   - re-sync trigger
+//     If the local chain lags too much, then the fetcher will enter "synnchronise"
+//     mode to retrieve missing headers in batch.
 func (f *lightFetcher) mainloop() {
 	defer f.wg.Done()
 

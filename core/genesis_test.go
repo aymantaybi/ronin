@@ -21,13 +21,13 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/consensus/ethash"
+	"github.com/aymantaybi/ronin/core/rawdb"
+	"github.com/aymantaybi/ronin/core/vm"
+	"github.com/aymantaybi/ronin/ethdb"
+	"github.com/aymantaybi/ronin/params"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/consensus/ethash"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/params"
 )
 
 func TestInvalidCliqueConfig(t *testing.T) {

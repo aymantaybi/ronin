@@ -22,9 +22,9 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/core/types"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/common/hexutil"
+	"github.com/aymantaybi/ronin/core/types"
 )
 
 type ValidationInfo struct {
@@ -51,7 +51,7 @@ func (vs *ValidationMessages) Info(msg string) {
 	vs.Messages = append(vs.Messages, ValidationInfo{INFO, msg})
 }
 
-/// getWarnings returns an error with all messages of type WARN of above, or nil if no warnings were present
+// / getWarnings returns an error with all messages of type WARN of above, or nil if no warnings were present
 func (v *ValidationMessages) GetWarnings() error {
 	var messages []string
 	for _, msg := range v.Messages {
@@ -80,7 +80,7 @@ type SendTxArgs struct {
 
 	// We accept "data" and "input" for backwards-compatibility reasons.
 	// "input" is the newer name and should be preferred by clients.
-	// Issue detail: https://github.com/ethereum/go-ethereum/issues/15628
+	// Issue detail: https://github.com/aymantaybi/ronin/issues/15628
 	Data  *hexutil.Bytes `json:"data"`
 	Input *hexutil.Bytes `json:"input,omitempty"`
 

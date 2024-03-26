@@ -1,10 +1,11 @@
 package bls
 
 import (
-	"github.com/stretchr/testify/require"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/crypto/bls/common"
+	"github.com/stretchr/testify/require"
+
+	"github.com/aymantaybi/ronin/crypto/bls/common"
 )
 
 func TestDisallowZeroSecretKeys(t *testing.T) {

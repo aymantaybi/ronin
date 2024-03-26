@@ -24,8 +24,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/common/hexutil"
 )
 
 // Hash represents the 32 byte Keccak256 hash of arbitrary data.

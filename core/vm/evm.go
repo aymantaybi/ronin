@@ -21,12 +21,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/log"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/crypto"
+	"github.com/aymantaybi/ronin/params"
 	"github.com/holiman/uint256"
 )
 

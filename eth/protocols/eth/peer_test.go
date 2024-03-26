@@ -23,10 +23,10 @@ import (
 	"crypto/rand"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/eth/protocols"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/enode"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/eth/protocols"
+	"github.com/aymantaybi/ronin/p2p"
+	"github.com/aymantaybi/ronin/p2p/enode"
 )
 
 // testPeer is a simulated peer to allow testing direct network calls.

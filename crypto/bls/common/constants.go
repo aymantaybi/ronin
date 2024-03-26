@@ -1,6 +1,6 @@
 package common
 
-import "github.com/ethereum/go-ethereum/params"
+import "github.com/aymantaybi/ronin/params"
 
 // ZeroSecretKey represents a zero secret key.
 var ZeroSecretKey = [32]byte{}

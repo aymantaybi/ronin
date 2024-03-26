@@ -26,10 +26,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/accounts/abi"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/aymantaybi/ronin/accounts/abi"
+	"github.com/aymantaybi/ronin/log"
 
-	"github.com/ethereum/go-ethereum/common"
+	"github.com/aymantaybi/ronin/common"
 )
 
 // precompiledTest defines the input/output pairs for precompiled contract tests.

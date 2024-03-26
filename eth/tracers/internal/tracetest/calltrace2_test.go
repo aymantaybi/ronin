@@ -25,20 +25,20 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/eth/tracers"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/ethereum/go-ethereum/tests"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/common/hexutil"
+	"github.com/aymantaybi/ronin/core"
+	"github.com/aymantaybi/ronin/core/rawdb"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/core/vm"
+	"github.com/aymantaybi/ronin/crypto"
+	"github.com/aymantaybi/ronin/eth/tracers"
+	"github.com/aymantaybi/ronin/params"
+	"github.com/aymantaybi/ronin/rlp"
+	"github.com/aymantaybi/ronin/tests"
 
 	// Force-load native and js packages, to trigger registration
-	_ "github.com/ethereum/go-ethereum/eth/tracers/native"
+	_ "github.com/aymantaybi/ronin/eth/tracers/native"
 )
 
 // To generate a new callTracer2 test, copy paste the makeTest method below into

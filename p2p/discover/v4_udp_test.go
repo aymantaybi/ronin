@@ -31,11 +31,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/internal/testlog"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/p2p/discover/v4wire"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/p2p/enr"
+	"github.com/aymantaybi/ronin/internal/testlog"
+	"github.com/aymantaybi/ronin/log"
+	"github.com/aymantaybi/ronin/p2p/discover/v4wire"
+	"github.com/aymantaybi/ronin/p2p/enode"
+	"github.com/aymantaybi/ronin/p2p/enr"
 )
 
 // shared test variables

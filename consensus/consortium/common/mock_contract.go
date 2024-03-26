@@ -5,16 +5,16 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto/bls/blst"
-	blsCommon "github.com/ethereum/go-ethereum/crypto/bls/common"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/crypto/bls/blst"
+	blsCommon "github.com/aymantaybi/ronin/crypto/bls/common"
+	"github.com/aymantaybi/ronin/log"
 )
 
 var Validators *MockValidators
 
 type MockValidators struct {
-	validators []common.Address
+	validators    []common.Address
 	blsPublicKeys map[common.Address]blsCommon.PublicKey
 }
 
@@ -25,7 +25,7 @@ func SetMockValidators(validators, publicKeys string) error {
 		return errors.New("mismatch length between mock validators and mock blsPubKey")
 	}
 	Validators = &MockValidators{
-		validators: make([]common.Address, len(vals)),
+		validators:    make([]common.Address, len(vals)),
 		blsPublicKeys: make(map[common.Address]blsCommon.PublicKey),
 	}
 	for i, val := range vals {

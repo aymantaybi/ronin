@@ -35,25 +35,25 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/internal/flags"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/ethereum/go-ethereum/rpc"
-	"github.com/ethereum/go-ethereum/signer/core"
-	"github.com/ethereum/go-ethereum/signer/core/apitypes"
-	"github.com/ethereum/go-ethereum/signer/fourbyte"
-	"github.com/ethereum/go-ethereum/signer/rules"
-	"github.com/ethereum/go-ethereum/signer/storage"
+	"github.com/aymantaybi/ronin/accounts"
+	"github.com/aymantaybi/ronin/accounts/keystore"
+	"github.com/aymantaybi/ronin/cmd/utils"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/common/hexutil"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/crypto"
+	"github.com/aymantaybi/ronin/internal/ethapi"
+	"github.com/aymantaybi/ronin/internal/flags"
+	"github.com/aymantaybi/ronin/log"
+	"github.com/aymantaybi/ronin/node"
+	"github.com/aymantaybi/ronin/params"
+	"github.com/aymantaybi/ronin/rlp"
+	"github.com/aymantaybi/ronin/rpc"
+	"github.com/aymantaybi/ronin/signer/core"
+	"github.com/aymantaybi/ronin/signer/core/apitypes"
+	"github.com/aymantaybi/ronin/signer/fourbyte"
+	"github.com/aymantaybi/ronin/signer/rules"
+	"github.com/aymantaybi/ronin/signer/storage"
 	"github.com/mattn/go-colorable"
 	"github.com/mattn/go-isatty"
 	"gopkg.in/urfave/cli.v1"
@@ -795,7 +795,7 @@ func checkFile(filename string) error {
 	}
 	// Check the unix permission bits
 	// However, on windows, we cannot use the unix perm-bits, see
-	// https://github.com/ethereum/go-ethereum/issues/20123
+	// https://github.com/aymantaybi/ronin/issues/20123
 	if runtime.GOOS != "windows" && info.Mode().Perm()&0377 != 0 {
 		return fmt.Errorf("file (%v) has insecure file permissions (%v)", filename, info.Mode().String())
 	}

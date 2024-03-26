@@ -21,10 +21,10 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/event"
+	"github.com/aymantaybi/ronin"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/event"
 	"golang.org/x/crypto/sha3"
 )
 
@@ -178,7 +178,8 @@ type Backend interface {
 // safely used to calculate a signature from.
 //
 // The hash is calulcated as
-//   keccak256("\x19Ethereum Signed Message:\n"${message length}${message}).
+//
+//	keccak256("\x19Ethereum Signed Message:\n"${message length}${message}).
 //
 // This gives context to the signed message and prevents signing of transactions.
 func TextHash(data []byte) []byte {
@@ -190,7 +191,8 @@ func TextHash(data []byte) []byte {
 // safely used to calculate a signature from.
 //
 // The hash is calulcated as
-//   keccak256("\x19Ethereum Signed Message:\n"${message length}${message}).
+//
+//	keccak256("\x19Ethereum Signed Message:\n"${message length}${message}).
 //
 // This gives context to the signed message and prevents signing of transactions.
 func TextAndHash(data []byte) ([]byte, string) {

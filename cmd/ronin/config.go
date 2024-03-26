@@ -25,23 +25,23 @@ import (
 	"reflect"
 	"unicode"
 
-	"github.com/ethereum/go-ethereum/common"
-	consortiumCommon "github.com/ethereum/go-ethereum/consensus/consortium/common"
-	"github.com/ethereum/go-ethereum/core/rawdb"
+	"github.com/aymantaybi/ronin/common"
+	consortiumCommon "github.com/aymantaybi/ronin/consensus/consortium/common"
+	"github.com/aymantaybi/ronin/core/rawdb"
 	"gopkg.in/urfave/cli.v1"
 
-	"github.com/ethereum/go-ethereum/accounts/external"
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/accounts/scwallet"
-	"github.com/ethereum/go-ethereum/accounts/usbwallet"
-	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/eth/catalyst"
-	"github.com/ethereum/go-ethereum/eth/ethconfig"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/aymantaybi/ronin/accounts/external"
+	"github.com/aymantaybi/ronin/accounts/keystore"
+	"github.com/aymantaybi/ronin/accounts/scwallet"
+	"github.com/aymantaybi/ronin/accounts/usbwallet"
+	"github.com/aymantaybi/ronin/cmd/utils"
+	"github.com/aymantaybi/ronin/eth/catalyst"
+	"github.com/aymantaybi/ronin/eth/ethconfig"
+	"github.com/aymantaybi/ronin/internal/ethapi"
+	"github.com/aymantaybi/ronin/log"
+	"github.com/aymantaybi/ronin/metrics"
+	"github.com/aymantaybi/ronin/node"
+	"github.com/aymantaybi/ronin/params"
 	"github.com/naoina/toml"
 )
 
@@ -89,10 +89,10 @@ type ethstatsConfig struct {
 }
 
 type gethConfig struct {
-	Eth        ethconfig.Config
-	Node       node.Config
-	Ethstats   ethstatsConfig
-	Metrics    metrics.Config
+	Eth      ethconfig.Config
+	Node     node.Config
+	Ethstats ethstatsConfig
+	Metrics  metrics.Config
 }
 
 func loadConfig(file string, cfg *gethConfig) error {

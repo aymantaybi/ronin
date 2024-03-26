@@ -21,9 +21,9 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/crypto"
 )
 
 // Tests that transactions can be added to strict lists and list contents and

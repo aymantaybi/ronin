@@ -5,8 +5,8 @@ package blst
 import (
 	"fmt"
 
-	"github.com/ethereum/go-ethereum/crypto/bls/common"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/aymantaybi/ronin/crypto/bls/common"
+	"github.com/aymantaybi/ronin/params"
 	lru "github.com/hashicorp/golang-lru"
 	"github.com/pkg/errors"
 )

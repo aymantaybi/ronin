@@ -22,12 +22,12 @@ import (
 	"os"
 	"strings"
 
+	"github.com/aymantaybi/ronin/internal/ethapi"
+	"github.com/aymantaybi/ronin/internal/jsre/deps"
+	"github.com/aymantaybi/ronin/log"
+	"github.com/aymantaybi/ronin/signer/core"
+	"github.com/aymantaybi/ronin/signer/storage"
 	"github.com/dop251/goja"
-	"github.com/ethereum/go-ethereum/internal/ethapi"
-	"github.com/ethereum/go-ethereum/internal/jsre/deps"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/signer/core"
-	"github.com/ethereum/go-ethereum/signer/storage"
 )
 
 var (

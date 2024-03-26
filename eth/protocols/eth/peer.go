@@ -21,11 +21,11 @@ import (
 	"math/rand"
 	"sync"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/eth/protocols"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/rlp"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/eth/protocols"
+	"github.com/aymantaybi/ronin/p2p"
+	"github.com/aymantaybi/ronin/rlp"
 )
 
 const (

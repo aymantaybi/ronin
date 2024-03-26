@@ -7,7 +7,7 @@ package mock
 import (
 	reflect "reflect"
 
-	common "github.com/ethereum/go-ethereum/crypto/bls/common"
+	common "github.com/aymantaybi/ronin/crypto/bls/common"
 	gomock "github.com/golang/mock/gomock"
 )
 

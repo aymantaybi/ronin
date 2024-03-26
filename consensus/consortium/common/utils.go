@@ -1,8 +1,9 @@
 package common
 
 import (
-	"github.com/ethereum/go-ethereum/common"
 	"sort"
+
+	"github.com/aymantaybi/ronin/common"
 )
 
 // ExtractAddressFromBytes extracts validators' address from extra data in header

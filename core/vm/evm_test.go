@@ -4,8 +4,8 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/core/types"
 )
 
 type TestOpEvent struct {

@@ -23,15 +23,15 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/rawdb"
-	"github.com/ethereum/go-ethereum/core/state"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/event"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/core"
+	"github.com/aymantaybi/ronin/core/rawdb"
+	"github.com/aymantaybi/ronin/core/state"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/ethdb"
+	"github.com/aymantaybi/ronin/event"
+	"github.com/aymantaybi/ronin/log"
+	"github.com/aymantaybi/ronin/params"
 )
 
 const (
@@ -76,10 +76,13 @@ type TxPool struct {
 //
 // Send instructs backend to forward new transactions
 // NewHead notifies backend about a new head after processed by the tx pool,
-//  including  mined and rolled back transactions since the last event
+//
+//	including  mined and rolled back transactions since the last event
+//
 // Discard notifies backend about transactions that should be discarded either
-//  because they have been replaced by a re-send or because they have been mined
-//  long ago and no rollback is expected
+//
+//	because they have been replaced by a re-send or because they have been mined
+//	long ago and no rollback is expected
 type TxRelayBackend interface {
 	Send(txs types.Transactions)
 	NewHead(head common.Hash, mined []common.Hash, rollback []common.Hash)

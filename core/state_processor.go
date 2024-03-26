@@ -20,15 +20,15 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/consensus"
-	"github.com/ethereum/go-ethereum/consensus/misc"
-	"github.com/ethereum/go-ethereum/core/state"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/consensus"
+	"github.com/aymantaybi/ronin/consensus/misc"
+	"github.com/aymantaybi/ronin/core/state"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/core/vm"
+	"github.com/aymantaybi/ronin/crypto"
+	"github.com/aymantaybi/ronin/log"
+	"github.com/aymantaybi/ronin/params"
 )
 
 // StateProcessor is a basic Processor, which takes care of transitioning

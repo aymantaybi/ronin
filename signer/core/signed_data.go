@@ -31,15 +31,15 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/consensus/clique"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/ethereum/go-ethereum/signer/core/apitypes"
+	"github.com/aymantaybi/ronin/accounts"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/common/hexutil"
+	"github.com/aymantaybi/ronin/common/math"
+	"github.com/aymantaybi/ronin/consensus/clique"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/crypto"
+	"github.com/aymantaybi/ronin/rlp"
+	"github.com/aymantaybi/ronin/signer/core/apitypes"
 )
 
 type SigFormat struct {
@@ -654,7 +654,7 @@ func (api *SignerAPI) EcRecover(ctx context.Context, data hexutil.Bytes, sig hex
 	// Note, the signature must conform to the secp256k1 curve R, S and V values, where
 	// the V value must be be 27 or 28 for legacy reasons.
 	//
-	// https://github.com/ethereum/go-ethereum/wiki/Management-APIs#personal_ecRecover
+	// https://github.com/aymantaybi/ronin/wiki/Management-APIs#personal_ecRecover
 	if len(sig) != 65 {
 		return common.Address{}, fmt.Errorf("signature must be 65 bytes long")
 	}

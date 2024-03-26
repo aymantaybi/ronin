@@ -24,11 +24,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common/mclock"
-	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/ethdb/memorydb"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/p2p/enr"
+	"github.com/aymantaybi/ronin/common/mclock"
+	"github.com/aymantaybi/ronin/ethdb"
+	"github.com/aymantaybi/ronin/ethdb/memorydb"
+	"github.com/aymantaybi/ronin/p2p/enode"
+	"github.com/aymantaybi/ronin/p2p/enr"
 )
 
 const (

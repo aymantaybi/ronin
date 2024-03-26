@@ -6,9 +6,9 @@ import (
 	"crypto/subtle"
 	"fmt"
 
-	"github.com/ethereum/go-ethereum/crypto/bls/common"
-	"github.com/ethereum/go-ethereum/crypto/rand"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/aymantaybi/ronin/crypto/bls/common"
+	"github.com/aymantaybi/ronin/crypto/rand"
+	"github.com/aymantaybi/ronin/params"
 	blst "github.com/supranational/blst/bindings/go"
 )
 

@@ -1,10 +1,10 @@
 package v2
 
 import (
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/consensus"
-	consortiumCommon "github.com/ethereum/go-ethereum/consensus/consortium/common"
-	"github.com/ethereum/go-ethereum/consensus/consortium/v2/finality"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/consensus"
+	consortiumCommon "github.com/aymantaybi/ronin/consensus/consortium/common"
+	"github.com/aymantaybi/ronin/consensus/consortium/v2/finality"
 )
 
 type consortiumV2Api struct {

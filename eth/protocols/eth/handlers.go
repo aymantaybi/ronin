@@ -20,11 +20,11 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/ethereum/go-ethereum/trie"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/log"
+	"github.com/aymantaybi/ronin/rlp"
+	"github.com/aymantaybi/ronin/trie"
 )
 
 // handleGetBlockHeaders66 is the eth/66 version of handleGetBlockHeaders
