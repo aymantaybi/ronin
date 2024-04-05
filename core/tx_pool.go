@@ -482,6 +482,14 @@ func (pool *TxPool) Nonce(addr common.Address) uint64 {
 	return pool.pendingNonces.get(addr)
 }
 
+// SetNonce sets address nonce in the pool.
+func (pool *TxPool) SetNonce(addr common.Address, nonce uint64) {
+	pool.mu.Lock()
+	defer pool.mu.Unlock()
+
+	pool.pendingNonces.set(addr, nonce)
+}
+
 // Stats retrieves the current pool stats, namely the number of pending and the
 // number of queued (non-executable) transactions.
 func (pool *TxPool) Stats() (int, int) {
