@@ -22,7 +22,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/aymantaybi/ronin/params"
 	"github.com/mattn/go-isatty"
 	"github.com/urfave/cli/v2"
 )

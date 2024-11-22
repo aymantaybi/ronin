@@ -3,10 +3,10 @@ package common
 import (
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/accounts"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/consensus"
-	"github.com/ethereum/go-ethereum/core/types"
+	"github.com/aymantaybi/ronin/accounts"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/consensus"
+	"github.com/aymantaybi/ronin/core/types"
 )
 
 // SignerFn is a signer callback function to request the wallet to sign the hash of the given data

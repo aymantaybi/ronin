@@ -35,11 +35,11 @@ import (
 	"time"
 
 	"github.com/docker/docker/pkg/reexec"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/node"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/enode"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/aymantaybi/ronin/log"
+	"github.com/aymantaybi/ronin/node"
+	"github.com/aymantaybi/ronin/p2p"
+	"github.com/aymantaybi/ronin/p2p/enode"
+	"github.com/aymantaybi/ronin/rpc"
 	"github.com/gorilla/websocket"
 )
 

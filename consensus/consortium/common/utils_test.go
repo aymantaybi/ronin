@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/common"
+	"github.com/aymantaybi/ronin/common"
 )
 
 func TestExtractAddressFromBytes(t *testing.T) {

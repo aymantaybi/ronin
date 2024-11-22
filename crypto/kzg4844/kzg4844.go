@@ -24,7 +24,7 @@ import (
 	"reflect"
 	"sync/atomic"
 
-	"github.com/ethereum/go-ethereum/common/hexutil"
+	"github.com/aymantaybi/ronin/common/hexutil"
 	lru "github.com/hashicorp/golang-lru/v2"
 )
 

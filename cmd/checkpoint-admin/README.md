@@ -6,11 +6,11 @@ Checkpoint-admin is a tool for updating checkpoint oracle status. It provides a 
 
 In the LES protocol, there is an important concept called checkpoint. In simple terms, whenever a certain number of blocks are generated on the blockchain, a new checkpoint is generated which contains some important information such as
 
-* Block hash at checkpoint
-* Canonical hash trie root at checkpoint
-* Bloom trie root at checkpoint
+- Block hash at checkpoint
+- Canonical hash trie root at checkpoint
+- Bloom trie root at checkpoint
 
-*For a more detailed introduction to checkpoint, please see the LES [spec](https://github.com/ethereum/devp2p/blob/master/caps/les.md).*
+_For a more detailed introduction to checkpoint, please see the LES [spec](https://github.com/ethereum/devp2p/blob/master/caps/les.md)._
 
 Using this information, light clients can skip all historical block headers when synchronizing data and start synchronization from this checkpoint. Therefore, as long as the light client can obtain some latest and correct checkpoints, the amount of data and time for synchronization will be greatly reduced.
 
@@ -18,7 +18,7 @@ However, from a security perspective, the most critical step in a synchronizatio
 
 #### Hardcoded checkpoint
 
-There are several hardcoded checkpoints in the [source code](https://github.com/ethereum/go-ethereum/blob/master/params/config.go#L38) of the go-ethereum project. These checkpoints are updated by go-ethereum developers when new versions of software are released. Because light client users trust Geth developers to some extent, hardcoded checkpoints in the code can also be considered correct.
+There are several hardcoded checkpoints in the [source code](https://github.com/aymantaybi/ronin/blob/master/params/config.go#L38) of the go-ethereum project. These checkpoints are updated by go-ethereum developers when new versions of software are released. Because light client users trust Geth developers to some extent, hardcoded checkpoints in the code can also be considered correct.
 
 #### Checkpoint oracle
 
@@ -35,7 +35,7 @@ Checkpoint-admin is a command line tool designed for checkpoint oracle. Users ca
 #### Install
 
 ```shell
-go get github.com/ethereum/go-ethereum/cmd/checkpoint-admin
+go get github.com/aymantaybi/ronin/cmd/checkpoint-admin
 ```
 
 #### Deploy
@@ -58,7 +58,7 @@ Checkpoint-admin provides two different modes of signing. You can automatically 
 checkpoint-admin sign --clef <CLEF_ENDPOINT> --signer <SIGNER_TO_SIGN_CHECKPOINT> --rpc <NODE_RPC_ENDPOINT>
 ```
 
-*It is worth noting that the connected Geth node can be a fullnode or a light client. If it is fullnode, you must enable the LES protocol. E.G. add `--light.serv 50` to the startup command line flags*.
+_It is worth noting that the connected Geth node can be a fullnode or a light client. If it is fullnode, you must enable the LES protocol. E.G. add `--light.serv 50` to the startup command line flags_.
 
 **Offline mode**
 
@@ -66,7 +66,7 @@ checkpoint-admin sign --clef <CLEF_ENDPOINT> --signer <SIGNER_TO_SIGN_CHECKPOINT
 checkpoint-admin sign --clef <CLEF_ENDPOINT> --signer <SIGNER_TO_SIGN_CHECKPOINT> --index <CHECKPOINT_INDEX> --hash <CHECKPOINT_HASH> --oracle <CHECKPOINT_ORACLE_ADDRESS>
 ```
 
-*CHECKPOINT_HASH is obtained based on this [calculation method](https://github.com/ethereum/go-ethereum/blob/master/params/config.go#L251).*
+_CHECKPOINT_HASH is obtained based on this [calculation method](https://github.com/aymantaybi/ronin/blob/master/params/config.go#L251)._
 
 #### Publish
 
@@ -88,8 +88,8 @@ checkpoint-admin status --rpc <NODE_RPC_ENDPOINT>
 
 Currently, only the Ethereum mainnet and the default supported test networks (ropsten, rinkeby, goerli) activate this feature. If you want to activate this feature in your private network, you can overwrite the relevant checkpoint oracle settings through the configuration file after deploying the oracle contract.
 
-* Get your node configuration file `geth dumpconfig OTHER_COMMAND_LINE_OPTIONS > config.toml`
-* Edit the configuration file and add the following information
+- Get your node configuration file `geth dumpconfig OTHER_COMMAND_LINE_OPTIONS > config.toml`
+- Edit the configuration file and add the following information
 
 ```toml
 [Eth.CheckpointOracle]
@@ -98,6 +98,6 @@ Signers = [TRUSTED_SIGNER_1, ..., TRUSTED_SIGNER_N]
 Threshold = THRESHOLD
 ```
 
-* Start geth with the modified configuration file
+- Start geth with the modified configuration file
 
-*In the private network, all fullnodes and light clients need to be started using the same checkpoint oracle settings.*
+_In the private network, all fullnodes and light clients need to be started using the same checkpoint oracle settings._

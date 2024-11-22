@@ -1,6 +1,6 @@
 package types
 
-import "github.com/ethereum/go-ethereum/common"
+import "github.com/aymantaybi/ronin/common"
 
 type BlobSidecars []*BlobSidecar
 

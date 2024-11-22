@@ -2,7 +2,7 @@ package bls
 
 import (
 	"encoding/json"
-	"github.com/ethereum/go-ethereum/common"
+	"github.com/aymantaybi/ronin/common"
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
 	keystorev4 "github.com/wealdtech/go-eth2-wallet-encryptor-keystorev4"

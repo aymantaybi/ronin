@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/metrics"
-	"github.com/ethereum/go-ethereum/p2p"
-	"github.com/ethereum/go-ethereum/p2p/enode"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/metrics"
+	"github.com/aymantaybi/ronin/p2p"
+	"github.com/aymantaybi/ronin/p2p/enode"
 )
 
 // Handler is a callback to invoke from an outside runner after the boilerplate

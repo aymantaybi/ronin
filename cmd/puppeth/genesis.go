@@ -22,13 +22,13 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/hexutil"
-	math2 "github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/consensus/ethash"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/common/hexutil"
+	math2 "github.com/aymantaybi/ronin/common/math"
+	"github.com/aymantaybi/ronin/consensus/ethash"
+	"github.com/aymantaybi/ronin/core"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/params"
 )
 
 // alethGenesisSpec represents the genesis specification format used by the

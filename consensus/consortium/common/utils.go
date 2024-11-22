@@ -4,7 +4,7 @@ import (
 	"math/big"
 	"sort"
 
-	"github.com/ethereum/go-ethereum/common"
+	"github.com/aymantaybi/ronin/common"
 )
 
 // ExtractAddressFromBytes extracts validators' address from extra data in header

@@ -20,10 +20,10 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/event"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/core"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/event"
 	"github.com/holiman/uint256"
 )
 
@@ -79,7 +79,7 @@ type AddressReserver func(addr common.Address, reserve bool) error
 type PendingFilter struct {
 	// Check the minimum tip needed to include a transaction
 	// This is different from go-ethereum because we don't pull this PR:
-	// https://github.com/ethereum/go-ethereum/pull/28933 which fixes
+	// https://github.com/aymantaybi/ronin/pull/28933 which fixes
 	// the merge issue. When EnforceTip is true, we use the minimum tip
 	// setting from the subpool.
 	EnforceTip bool

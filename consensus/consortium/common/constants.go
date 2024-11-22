@@ -3,7 +3,7 @@ package common
 import (
 	"errors"
 
-	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/aymantaybi/ronin/crypto"
 )
 
 const (

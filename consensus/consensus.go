@@ -20,15 +20,15 @@ package consensus
 import (
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/consensus/consortium/v2/finality"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/ethdb"
+	"github.com/aymantaybi/ronin/consensus/consortium/v2/finality"
+	"github.com/aymantaybi/ronin/core/vm"
+	"github.com/aymantaybi/ronin/ethdb"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/state"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/params"
-	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/core/state"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/params"
+	"github.com/aymantaybi/ronin/rpc"
 )
 
 var (

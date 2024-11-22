@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/ethereum/go-ethereum/cmd/evm/internal/compiler"
+	"github.com/aymantaybi/ronin/cmd/evm/internal/compiler"
 	"github.com/urfave/cli/v2"
 )
 

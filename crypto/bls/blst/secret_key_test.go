@@ -8,12 +8,12 @@ import (
 	"errors"
 	"testing"
 
-	byteutil "github.com/ethereum/go-ethereum/common"
+	byteutil "github.com/aymantaybi/ronin/common"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethereum/go-ethereum/crypto/bls/blst"
-	"github.com/ethereum/go-ethereum/crypto/bls/common"
+	"github.com/aymantaybi/ronin/crypto/bls/blst"
+	"github.com/aymantaybi/ronin/crypto/bls/common"
 )
 
 func TestMarshalUnmarshal(t *testing.T) {

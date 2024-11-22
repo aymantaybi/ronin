@@ -4,9 +4,9 @@ import (
 	"errors"
 	"sort"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/core/vm"
+	"github.com/aymantaybi/ronin/params"
 )
 
 const (

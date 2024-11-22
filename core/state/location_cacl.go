@@ -4,8 +4,8 @@ import (
 	"encoding/binary"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/crypto"
 )
 
 func GetLocSimpleVariable(slot uint64) common.Hash {

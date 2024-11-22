@@ -19,9 +19,9 @@ package native
 import (
 	"encoding/json"
 	"errors"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/eth/tracers"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/core/vm"
+	"github.com/aymantaybi/ronin/eth/tracers"
 	"math/big"
 	"strconv"
 	"strings"

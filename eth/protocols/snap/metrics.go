@@ -1,6 +1,6 @@
 package snap
 
-import "github.com/ethereum/go-ethereum/metrics"
+import "github.com/aymantaybi/ronin/metrics"
 
 var (
 	ingressRegistrationErrorName = "eth/protocols/snap/ingress/registration/error"

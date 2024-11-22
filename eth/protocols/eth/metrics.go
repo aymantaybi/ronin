@@ -1,7 +1,7 @@
 package eth
 
 import (
-	"github.com/ethereum/go-ethereum/metrics"
+	"github.com/aymantaybi/ronin/metrics"
 )
 
 // meters stores ingress and egress handshake meters.

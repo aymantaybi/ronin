@@ -21,11 +21,11 @@ import (
 	"math/big"
 	"sync"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/eth/protocols/eth"
-	"github.com/ethereum/go-ethereum/eth/protocols/ronin"
-	"github.com/ethereum/go-ethereum/eth/protocols/snap"
-	"github.com/ethereum/go-ethereum/p2p"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/eth/protocols/eth"
+	"github.com/aymantaybi/ronin/eth/protocols/ronin"
+	"github.com/aymantaybi/ronin/eth/protocols/snap"
+	"github.com/aymantaybi/ronin/p2p"
 )
 
 var (

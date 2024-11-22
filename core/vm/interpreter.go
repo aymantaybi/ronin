@@ -20,9 +20,9 @@ import (
 	"hash"
 	"sync/atomic"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/common/math"
+	"github.com/aymantaybi/ronin/log"
 )
 
 // Config are the configuration options for the Interpreter

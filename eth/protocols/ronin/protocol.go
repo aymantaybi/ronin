@@ -3,7 +3,7 @@ package ronin
 import (
 	"errors"
 
-	"github.com/ethereum/go-ethereum/core/types"
+	"github.com/aymantaybi/ronin/core/types"
 )
 
 // Constants to match up protocol versions and messages

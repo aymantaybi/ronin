@@ -23,7 +23,7 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/ethereum/go-ethereum/metrics"
+	"github.com/aymantaybi/ronin/metrics"
 )
 
 const (

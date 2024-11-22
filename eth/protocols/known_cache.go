@@ -2,7 +2,7 @@ package protocols
 
 import (
 	mapset "github.com/deckarep/golang-set"
-	"github.com/ethereum/go-ethereum/common"
+	"github.com/aymantaybi/ronin/common"
 )
 
 // max is a helper function which returns the larger of the two given integers.

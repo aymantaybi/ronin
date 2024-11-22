@@ -25,7 +25,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ethereum/go-ethereum/metrics"
+	"github.com/aymantaybi/ronin/metrics"
 	"github.com/stretchr/testify/require"
 )
 

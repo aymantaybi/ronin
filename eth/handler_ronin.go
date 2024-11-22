@@ -1,9 +1,9 @@
 package eth
 
 import (
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/eth/protocols/ronin"
-	"github.com/ethereum/go-ethereum/p2p/enode"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/eth/protocols/ronin"
+	"github.com/aymantaybi/ronin/p2p/enode"
 )
 
 type roninHandler handler

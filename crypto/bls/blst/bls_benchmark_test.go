@@ -7,8 +7,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ethereum/go-ethereum/crypto/bls/blst"
-	"github.com/ethereum/go-ethereum/crypto/bls/common"
+	"github.com/aymantaybi/ronin/crypto/bls/blst"
+	"github.com/aymantaybi/ronin/crypto/bls/common"
 )
 
 func BenchmarkSignature_Verify(b *testing.B) {

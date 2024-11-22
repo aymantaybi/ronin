@@ -4,8 +4,8 @@
 package bls
 
 import (
-	"github.com/ethereum/go-ethereum/crypto/bls/blst"
-	"github.com/ethereum/go-ethereum/crypto/bls/common"
+	"github.com/aymantaybi/ronin/crypto/bls/blst"
+	"github.com/aymantaybi/ronin/crypto/bls/common"
 )
 
 // SecretKeyFromBytes creates a BLS private key from a BigEndian byte slice.

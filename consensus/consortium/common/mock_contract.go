@@ -5,10 +5,10 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto/bls/blst"
-	blsCommon "github.com/ethereum/go-ethereum/crypto/bls/common"
-	"github.com/ethereum/go-ethereum/log"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/crypto/bls/blst"
+	blsCommon "github.com/aymantaybi/ronin/crypto/bls/common"
+	"github.com/aymantaybi/ronin/log"
 )
 
 var Validators *MockValidators

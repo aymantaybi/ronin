@@ -3,12 +3,12 @@ package types
 import (
 	"sync/atomic"
 
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/aymantaybi/ronin/params"
 
-	"github.com/ethereum/go-ethereum/crypto/bls"
+	"github.com/aymantaybi/ronin/crypto/bls"
 	"github.com/pkg/errors"
 
-	"github.com/ethereum/go-ethereum/common"
+	"github.com/aymantaybi/ronin/common"
 )
 
 type BLSPublicKey [params.BLSPubkeyLength]byte

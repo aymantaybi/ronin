@@ -20,11 +20,11 @@ import (
 	"bufio"
 	"bytes"
 	"fmt"
-	"github.com/ethereum/go-ethereum/eth/tracers/logger"
+	"github.com/aymantaybi/ronin/eth/tracers/logger"
 	"reflect"
 	"testing"
 
-	"github.com/ethereum/go-ethereum/core/vm"
+	"github.com/aymantaybi/ronin/core/vm"
 )
 
 func TestState(t *testing.T) {

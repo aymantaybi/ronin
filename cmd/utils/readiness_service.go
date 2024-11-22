@@ -10,9 +10,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/ethereum/go-ethereum/core"
-	"github.com/ethereum/go-ethereum/log"
-	"github.com/ethereum/go-ethereum/node"
+	"github.com/aymantaybi/ronin/core"
+	"github.com/aymantaybi/ronin/log"
+	"github.com/aymantaybi/ronin/node"
 )
 
 type Metric struct {

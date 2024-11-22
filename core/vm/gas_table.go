@@ -19,9 +19,9 @@ package vm
 import (
 	"errors"
 
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/common/math"
+	"github.com/aymantaybi/ronin/params"
 )
 
 // memoryGasCost calculates the quadratic gas for memory expansion. It does so

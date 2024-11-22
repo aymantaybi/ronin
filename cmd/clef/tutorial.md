@@ -37,7 +37,7 @@ You should treat 'masterseed.json' with utmost secrecy and make a backup of it!
 * The master seed does not contain your accounts, those need to be backed up separately!
 ```
 
-*For readability purposes, we'll remove the WARNING printout, user confirmation and the unlocking of the master seed in the rest of this document.*
+_For readability purposes, we'll remove the WARNING printout, user confirmation and the unlocking of the master seed in the rest of this document._
 
 ## Remote interactions
 
@@ -61,9 +61,9 @@ INFO [07-01|11:00:46.392] IPC endpoint opened                      url=$HOME/.cl
 * extapi_ipc : $HOME/.clef/clef.ipc
 ```
 
-By default, Clef starts up in CLI (Command Line Interface) mode. Arbitrary remote processes may *request* account interactions (e.g. sign a transaction), which the user will need to individually *confirm*.
+By default, Clef starts up in CLI (Command Line Interface) mode. Arbitrary remote processes may _request_ account interactions (e.g. sign a transaction), which the user will need to individually _confirm_.
 
-To test this out, we can *request* Clef to list all account via its *External API endpoint*:
+To test this out, we can _request_ Clef to list all account via its _External API endpoint_:
 
 ```text
 echo '{"id": 1, "jsonrpc": "2.0", "method": "account_list"}' | nc -U ~/.clef/clef.ipc
@@ -100,9 +100,9 @@ or
 {"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"Request denied"}}
 ```
 
-Apart from listing accounts, you can also *request* creating a new account; signing transactions and data; and recovering signatures. You can find the available methods in the Clef [External API Spec](https://github.com/ethereum/go-ethereum/tree/master/cmd/clef#external-api-1) and the [External API Changelog](https://github.com/ethereum/go-ethereum/blob/master/cmd/clef/extapi_changelog.md).
+Apart from listing accounts, you can also _request_ creating a new account; signing transactions and data; and recovering signatures. You can find the available methods in the Clef [External API Spec](https://github.com/aymantaybi/ronin/tree/master/cmd/clef#external-api-1) and the [External API Changelog](https://github.com/aymantaybi/ronin/blob/master/cmd/clef/extapi_changelog.md).
 
-*Note, the number of things you can do from the External API is deliberately small, since we want to limit the power of remote calls by as much as possible! Clef has an [Internal API](https://github.com/ethereum/go-ethereum/tree/master/cmd/clef#ui-api-1) too for the UI (User Interface) which is much richer and can support custom interfaces on top. But that's out of scope here.*
+_Note, the number of things you can do from the External API is deliberately small, since we want to limit the power of remote calls by as much as possible! Clef has an [Internal API](https://github.com/aymantaybi/ronin/tree/master/cmd/clef#ui-api-1) too for the UI (User Interface) which is much richer and can support custom interfaces on top. But that's out of scope here._
 
 ## Automatic rules
 
@@ -112,11 +112,11 @@ For starters, we can create a rule file that automatically permits anyone to lis
 
 ```js
 function ApproveListing() {
-    return "Approve"
+  return "Approve";
 }
 ```
 
-Of course, Clef isn't going to just accept and run arbitrary scripts you give it, that would be dangerous if someone changes your rule file! Instead, you need to explicitly *attest* the rule file, which entails injecting its hash into Clef's secure store.
+Of course, Clef isn't going to just accept and run arbitrary scripts you give it, that would be dangerous if someone changes your rule file! Instead, you need to explicitly _attest_ the rule file, which entails injecting its hash into Clef's secure store.
 
 ```text
 $ sha256sum rules.js
@@ -149,7 +149,7 @@ INFO [07-01|13:39:49.728] IPC endpoint opened                      url=$HOME/.cl
 * extapi_ipc : $HOME/.clef/clef.ipc
 ```
 
-Any account listing *request* will now be auto-approved by the rule file:
+Any account listing _request_ will now be auto-approved by the rule file:
 
 ```text
 $ echo '{"id": 1, "jsonrpc": "2.0", "method": "account_list"}' | nc -U ~/.clef/clef.ipc
@@ -183,7 +183,7 @@ $ cat ~/.clef/02f90c0603f4f2f60188/config.json
 In `$HOME/.clef`, the `masterseed.json` file was created, containing the master seed. This seed was then used to derive a few other things:
 
 - **Vault location**: in this case `02f90c0603f4f2f60188`.
-   - If you use a different master seed, a different vault location will be used that does not conflict with each other (e.g. `clef --signersecret /path/to/file`). This allows you to run multiple instances of Clef, each with its own rules (e.g. mainnet + testnet).
+  - If you use a different master seed, a different vault location will be used that does not conflict with each other (e.g. `clef --signersecret /path/to/file`). This allows you to run multiple instances of Clef, each with its own rules (e.g. mainnet + testnet).
 - **`config.json`**: the encrypted key/value storage for configuration data, currently only containing the key `ruleset_sha256`, the attested hash of the automatic rules to use.
 
 ## Advanced rules
@@ -206,28 +206,28 @@ Now let's update the rules to make use of the new credentials:
 
 ```js
 function ApproveListing() {
-    return "Approve"
+  return "Approve";
 }
 
 function ApproveSignData(req) {
-    if (req.address.toLowerCase() == "0xd9c9cd5f6779558b6e0ed4e6acf6b1947e7fa1f3") {
-        if (req.messages[0].value.indexOf("bazonk") >= 0) {
-            return "Approve"
-        }
-        return "Reject"
+  if (req.address.toLowerCase() == "0xd9c9cd5f6779558b6e0ed4e6acf6b1947e7fa1f3") {
+    if (req.messages[0].value.indexOf("bazonk") >= 0) {
+      return "Approve";
     }
-    // Otherwise goes to manual processing
+    return "Reject";
+  }
+  // Otherwise goes to manual processing
 }
 ```
 
 In this example:
 
 - Any requests to sign data with the account `0xd9c9...` will be:
-    - Auto-approved if the message contains `bazonk`,
-    - Auto-rejected if the message does not contain `bazonk`,
+  - Auto-approved if the message contains `bazonk`,
+  - Auto-rejected if the message does not contain `bazonk`,
 - Any other requests will be passed along for manual confirmation.
 
-*Note, to make this example work, please use you own accounts. You can create a new account either via Clef or the traditional account CLI tools. If the latter was chosen, make sure both Clef and Geth use the same keystore by specifying `--keystore path/to/your/keystore` when running Clef.*
+_Note, to make this example work, please use you own accounts. You can create a new account either via Clef or the traditional account CLI tools. If the latter was chosen, make sure both Clef and Geth use the same keystore by specifying `--keystore path/to/your/keystore` when running Clef._
 
 Attest the new rule file so that Clef will accept loading it:
 
@@ -273,6 +273,7 @@ $ echo '{"id": 1, "jsonrpc":"2.0", "method":"account_signData", "params":["data/
 ```
 
 Meanwhile, in the Clef output log you can see:
+
 ```text
 INFO [02-21|14:42:41] Op approved
 INFO [02-21|14:42:56] Op rejected
@@ -288,7 +289,7 @@ t=2019-07-01T15:52:23+0300 lvl=info msg=SignData   api=signer type=request  meta
 t=2019-07-01T15:52:23+0300 lvl=info msg=SignData   api=signer type=response data=                                     error="Request denied"
 ```
 
-For more details on writing automatic rules, please see the [rules spec](https://github.com/ethereum/go-ethereum/blob/master/cmd/clef/rules.md).
+For more details on writing automatic rules, please see the [rules spec](https://github.com/aymantaybi/ronin/blob/master/cmd/clef/rules.md).
 
 ## Geth integration
 
@@ -350,4 +351,4 @@ Approve? [y/N]:
 
 :boom:
 
-*Note, if you enable the external signer backend in Geth, all other account management is disabled. This is because long term we want to remove account management from Geth.*
+_Note, if you enable the external signer backend in Geth, all other account management is disabled. This is because long term we want to remove account management from Geth._

@@ -21,15 +21,15 @@ import (
 	"math"
 	"math/big"
 
-	"github.com/ethereum/go-ethereum/consensus"
-	"github.com/ethereum/go-ethereum/crypto/kzg4844"
+	"github.com/aymantaybi/ronin/consensus"
+	"github.com/aymantaybi/ronin/crypto/kzg4844"
 
-	"github.com/ethereum/go-ethereum/common"
-	cmath "github.com/ethereum/go-ethereum/common/math"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/params"
+	"github.com/aymantaybi/ronin/common"
+	cmath "github.com/aymantaybi/ronin/common/math"
+	"github.com/aymantaybi/ronin/core/types"
+	"github.com/aymantaybi/ronin/core/vm"
+	"github.com/aymantaybi/ronin/crypto"
+	"github.com/aymantaybi/ronin/params"
 )
 
 var emptyCodeHash = crypto.Keccak256Hash(nil)

@@ -26,11 +26,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ethereum/go-ethereum/accounts/keystore"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/console/prompt"
-	"github.com/ethereum/go-ethereum/p2p/dnsdisc"
-	"github.com/ethereum/go-ethereum/p2p/enode"
+	"github.com/aymantaybi/ronin/accounts/keystore"
+	"github.com/aymantaybi/ronin/common"
+	"github.com/aymantaybi/ronin/console/prompt"
+	"github.com/aymantaybi/ronin/p2p/dnsdisc"
+	"github.com/aymantaybi/ronin/p2p/enode"
 	"github.com/urfave/cli/v2"
 )
 
