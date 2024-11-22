@@ -5,8 +5,8 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/aymantaybi/ronin/common"
-	"github.com/aymantaybi/ronin/crypto/bls/blst"
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/crypto/bls/blst"
 )
 
 func TestFinalityVoteBitSet(t *testing.T) {
