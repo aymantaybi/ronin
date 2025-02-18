@@ -754,6 +754,10 @@ web3._extend({
 	methods: [],
 	properties:
 	[
+	    new web3._extend.Property({
+			name: 'ready',
+			getter: 'txpool_ready'
+		}),
 		new web3._extend.Property({
 			name: 'content',
 			getter: 'txpool_content'

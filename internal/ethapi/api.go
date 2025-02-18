@@ -37,6 +37,7 @@ import (
 	"github.com/ethereum/go-ethereum/consensus/misc/eip1559"
 	"github.com/ethereum/go-ethereum/core"
 	"github.com/ethereum/go-ethereum/core/state"
+	"github.com/ethereum/go-ethereum/core/txpool"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/core/vm"
 	"github.com/ethereum/go-ethereum/crypto"
@@ -179,6 +180,27 @@ type PublicTxPoolAPI struct {
 func NewPublicTxPoolAPI(b Backend) *PublicTxPoolAPI {
 	return &PublicTxPoolAPI{b}
 }
+
+func (s *PublicTxPoolAPI) Ready() error {
+
+	signer := types.LatestSigner(s.b.ChainConfig())
+
+    pending := s.b.TxPool().Pending(&txpool.PendingFilter{EnforceTip: true})
+
+    txset := NewTransactionsByPriceAndNonce(signer, pending, nil)
+
+	txs := types.Transactions{}
+	for tx, _ := txset.Peek(); tx != nil; tx, _ = txset.Peek() {
+		txs = append(txs, tx.Resolve())
+		txset.Shift()
+	}
+
+	for _, tx := range txs {
+		fmt.Println(tx.Hash(), tx.Time())
+	}
+
+   return nil
+}  
 
 // Content returns the transactions contained within the transaction pool.
 func (s *PublicTxPoolAPI) Content() map[string]map[string]map[string]*RPCTransaction {
