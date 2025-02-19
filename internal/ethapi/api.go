@@ -197,6 +197,14 @@ func (s *PublicTxPoolAPI) Ready() []string {
 
 	values:= []string{}
 
+	block := s.b.CurrentBlock()
+
+	num := block.Number()
+	tim := block.ReceivedAt
+
+	v := fmt.Sprint(num, tim)
+	values = append(values, v)
+
 	for _, tx := range txs {
 		s := fmt.Sprint(tx.Hash(), tx.Time())
 		values = append(values, s)
