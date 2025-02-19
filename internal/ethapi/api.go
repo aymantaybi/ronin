@@ -181,7 +181,7 @@ func NewPublicTxPoolAPI(b Backend) *PublicTxPoolAPI {
 	return &PublicTxPoolAPI{b}
 }
 
-func (s *PublicTxPoolAPI) Ready() error {
+func (s *PublicTxPoolAPI) Ready() []string {
 
 	signer := types.LatestSigner(s.b.ChainConfig())
 
@@ -195,11 +195,14 @@ func (s *PublicTxPoolAPI) Ready() error {
 		txset.Shift()
 	}
 
+	values:= []string{}
+
 	for _, tx := range txs {
-		fmt.Println(tx.Hash(), tx.Time())
+		s := fmt.Sprint(tx.Hash(), tx.Time())
+		values = append(values, s)
 	}
 
-   return nil
+   return values
 }  
 
 // Content returns the transactions contained within the transaction pool.
