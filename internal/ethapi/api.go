@@ -2291,19 +2291,21 @@ func (s *PublicNetAPI) PeerCount() hexutil.Uint {
 }
 
 // PeerCount returns the number of connected peers
-func (s *PublicNetAPI) BroadcastTransaction() error  {
+func (s *PublicNetAPI) BroadcastTransaction() (string,error)  {
 	peers := s.net.Peers()
 
 	for _, peer := range peers {
-        proto, err := peer.GetProto(0)
+        proto, err := peer.GetProto(1)
 	    if err != nil {
-		    return err
+		    return "", err
 	    }
 		
-		fmt.Println(proto.Name)
+		return proto.Name, nil
 
 	}
-    return nil
+ 
+	return "", nil
+	
 }
 
 // Version returns the current ethereum protocol version.
