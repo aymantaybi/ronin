@@ -2291,20 +2291,15 @@ func (s *PublicNetAPI) PeerCount() hexutil.Uint {
 }
 
 // PeerCount returns the number of connected peers
-func (s *PublicNetAPI) BroadcastTransaction() (string,error)  {
+func (s *PublicNetAPI) BroadcastTransaction() string  {
 	peers := s.net.Peers()
 
 	for _, peer := range peers {
-        proto, err := peer.GetProto(1)
-	    if err != nil {
-		    return "", err
-	    }
-		
-		return proto.Name, nil
-
+        proto := peer.GetProtoByName("eth")
+		return proto.Name
 	}
  
-	return "", nil
+	return ""
 	
 }
 
