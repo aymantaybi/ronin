@@ -42,6 +42,7 @@ import (
 	"github.com/ethereum/go-ethereum/core/vm"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/eth/gasestimator"
+	"github.com/ethereum/go-ethereum/eth/protocols/eth"
 	"github.com/ethereum/go-ethereum/eth/tracers/logger"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/p2p"
@@ -2290,17 +2291,25 @@ func (s *PublicNetAPI) PeerCount() hexutil.Uint {
 	return hexutil.Uint(s.net.PeerCount())
 }
 
-// PeerCount returns the number of connected peers
-func (s *PublicNetAPI) BroadcastTransaction() string  {
+// fix web3js
+func (s *PublicNetAPI) BroadcastTransaction(ctx context.Context, input hexutil.Bytes) error {
+	tx := new(types.Transaction)
+	if err := tx.UnmarshalBinary(input); err != nil {
+		return  err
+	}
+
 	peers := s.net.Peers()
 
 	for _, peer := range peers {
         proto := peer.GetProtoByName("eth")
-		return proto.Name
+		var rw p2p.MsgReadWriter = proto
+		var txs types.Transactions
+		txs = append(txs, tx)
+		p2p.Send(rw, eth.TransactionsMsg, txs)
+		log.Info("Transaction broadcasted", "peer", peer.Name())
 	}
  
-	return ""
-	
+	return nil
 }
 
 // Version returns the current ethereum protocol version.

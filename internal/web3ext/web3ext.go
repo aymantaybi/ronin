@@ -669,15 +669,17 @@ web3._extend({
 const NetJs = `
 web3._extend({
 	property: 'net',
-	methods: [],
+	methods: [
+		new web3._extend.Method({
+			name: 'broadcastTransaction',
+			call: 'net_broadcastTransaction',
+			params: 1,
+		}),
+	],
 	properties: [
 		new web3._extend.Property({
 			name: 'version',
 			getter: 'net_version'
-		}),
-		new web3._extend.Property({
-			name: 'broadcastTransaction',
-			getter: 'net_broadcastTransaction'
 		}),
 	]
 });
