@@ -159,6 +159,11 @@ func NewPeerPipeWithProtocol(id enode.ID, name string, caps []Cap, pipe *MsgPipe
 }
 
 // ID returns the node's public key.
+func (p *Peer) GetProto(code uint64) (*protoRW, error) {
+	return p.getProto(code)
+}
+
+// ID returns the node's public key.
 func (p *Peer) ID() enode.ID {
 	return p.rw.node.ID()
 }
