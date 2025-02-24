@@ -2305,8 +2305,10 @@ func (s *PublicNetAPI) BroadcastTransaction(ctx context.Context, input hexutil.B
 		var rw p2p.MsgReadWriter = proto
 		var txs types.Transactions
 		txs = append(txs, tx)
-		p2p.Send(rw, eth.TransactionsMsg, txs)
-		log.Info("Transaction broadcasted", "peer", peer.Name())
+		go func() {
+			p2p.Send(rw, eth.TransactionsMsg, txs)
+		    log.Info("Transaction broadcasted", "peer", peer.Name())
+		}()	
 	}
  
 	return nil
